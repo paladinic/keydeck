@@ -1,18 +1,30 @@
-# keydeck
+<p align="center">
+  <img src="docs/logo.svg" width="64" height="64" alt="">
+</p>
 
-**A multitrack MIDI recorder and piano-roll sequencer in a single HTML file.**
+<h1 align="center">keydeck</h1>
+
+<p align="center">
+  <b>A multitrack MIDI recorder and piano-roll sequencer in a single HTML file.</b>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-black.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/dependencies-0-black.svg" alt="No dependencies">
+  <img src="https://img.shields.io/badge/files-1-black.svg" alt="Single file">
+  <img src="https://img.shields.io/badge/build%20step-none-black.svg" alt="No build step">
+</p>
+
+<p align="center">
+  <b><a href="https://paladinic.github.io/keydeck/">▶ Try it now</a></b> — or
+  <b><a href="https://raw.githubusercontent.com/paladinic/keydeck/main/index.html">download <code>index.html</code></a></b>
+  (right-click → Save as) and double-click it. That's the whole install.
+</p>
+
+<img src="docs/screenshot.png" alt="keydeck with a four-track project open: an Electric piano, two Marimba tracks and a Warm pad, their notes laid out as coloured bars in the piano roll, with the transport, tool and track controls above and the labelled QWERTY keyboard below.">
 
 Type on your computer keyboard, record to as many tracks as you like, edit the
 notes in a piano roll, and export a standard `.mid` or a rendered `.wav`.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-![No dependencies](https://img.shields.io/badge/dependencies-0-black.svg)
-![Single file](https://img.shields.io/badge/files-1-black.svg)
-![No build step](https://img.shields.io/badge/build%20step-none-black.svg)
-
-**[▶ Try it now](https://paladinic.github.io/keydeck/)** — or
-**[download `index.html`](https://raw.githubusercontent.com/paladinic/keydeck/main/index.html)**
-(right-click → Save as) and double-click it. That's the whole install.
 
 ---
 

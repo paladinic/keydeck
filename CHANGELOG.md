@@ -11,6 +11,9 @@ The version is shown in the browser tab title and under **Help → About**.
 ### Added
 - Open-source repository scaffolding: README, MIT license, contributing guide,
   issue and pull request templates.
+- A screenshot and a standalone `docs/logo.svg`, the latter drawn with exactly
+  the same geometry as the inline favicon so the tab icon and the repo mark are
+  one drawing.
 - GitHub Pages deployment, so hardware MIDI keyboards work without setting up a
   local server.
 - A CI check that fails the build if `index.html` gains an external dependency,

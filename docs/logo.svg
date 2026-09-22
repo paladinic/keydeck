@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The keydeck mark: three black keys over the front rail of a keyboard.
+  Identical geometry to the inline favicon in index.html, so the tab icon
+  and the repo logo are the same drawing. Kept on a 16x16 grid and rendered
+  with crisp edges, because the whole app is unapologetically pixel-aligned.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+     width="16" height="16" shape-rendering="crispEdges" role="img"
+     aria-label="keydeck">
+  <rect width="16" height="16" fill="#ffffff"/>
+  <rect x="2"  y="2"  width="2"  height="9" fill="#000000"/>
+  <rect x="7"  y="2"  width="2"  height="9" fill="#000000"/>
+  <rect x="11" y="2"  width="2"  height="9" fill="#000000"/>
+  <rect x="0"  y="13" width="16" height="3" fill="#000000"/>
+</svg>
