@@ -19,7 +19,7 @@ Concretely, a pull request must not add:
   without them choosing to save
 
 If you need a helper function, write it inline. If you need an icon, draw it as
-inline SVG — that is how every existing icon works.
+inline SVG - that is how every existing icon works.
 
 Everything else is open for discussion: new instruments, new engines, editing
 tools, better timing, accessibility, bug fixes.
@@ -28,7 +28,7 @@ tools, better timing, accessibility, bug fixes.
 
 Roughly 3,300 lines in three parts: styles, markup, then script. The script is
 divided by banner comments, so the fastest way to navigate is to search for
-them. Line numbers below are for v0.9.5 and will drift — the banners won't.
+them. Line numbers below are for v0.9.5 and will drift - the banners won't.
 
 ```
      1   <style>          Win95 chrome: bevels, menus, toolbars, dialogs
@@ -70,7 +70,7 @@ A few things worth knowing before you edit:
 
 ## Testing a change
 
-There is no test suite — the app is the test. Before opening a pull request,
+There is no test suite - the app is the test. Before opening a pull request,
 open the file and confirm at least this much still works:
 
 1. Add a track, record a few bars from the QWERTY keyboard, play it back.
@@ -82,7 +82,7 @@ open the file and confirm at least this much still works:
 7. Save a project, reload the page, and open it again.
 8. Open the instrument editor, change a parameter, and hear it apply.
 
-If your change touches MIDI hardware, test it over `http://localhost` — Web MIDI
+If your change touches MIDI hardware, test it over `http://localhost` - Web MIDI
 is blocked on `file://`.
 
 Please check it in more than one browser if you can. Chrome and Firefox differ
@@ -93,7 +93,7 @@ in useful ways, particularly around audio timing.
 Match what's already there rather than importing habits from elsewhere:
 
 - 2-space indent, semicolons, double quotes
-- Plain browser JavaScript — no modules, no TypeScript, no JSX
+- Plain browser JavaScript - no modules, no TypeScript, no JSX
 - Short comments that explain *why*, not *what*
 - Keep the Win95 look. The bevels, the 11px Verdana, the square corners and the
   LCD readout are the point, not an accident.
@@ -102,7 +102,7 @@ Match what's already there rather than importing habits from elsewhere:
 
 Open an issue with your browser and OS, what you did, what happened, and what
 you expected. If it involves MIDI hardware, name the device. If it involves a
-specific project, attach the saved `.json` — it's plain text and small.
+specific project, attach the saved `.json` - it's plain text and small.
 
 ## Pull requests
 

@@ -19,7 +19,7 @@ The version is shown in the browser tab title and under **Help → About**.
 - A CI check that fails the build if `index.html` gains an external dependency,
   a network call, browser storage, or a build step.
 
-## [0.9.5] — 2026-09-22
+## [0.9.5] - 2026-09-22
 
 First public release.
 
@@ -27,7 +27,7 @@ First public release.
 - Multitrack recording from the computer keyboard, with count-in and metronome.
 - Piano-roll editing: draw, drag, resize, and erase notes; area select; copy,
   cut, paste; quantize a selection; undo and redo.
-- A built-in synthesiser with two engines — oscillator stacks and FM — plus a
+- A built-in synthesiser with two engines - oscillator stacks and FM - plus a
   resonant low-pass filter with key tracking, ADSR, vibrato, and a reverb send.
 - Ten instruments: piano, electric piano, marimba, organ, plucked guitar, sub
   bass, strings, warm pad, synth lead, and a drum kit.
