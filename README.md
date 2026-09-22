@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <b><a href="https://paladinic.github.io/keydeck/">▶ Try it now</a></b> — or
+  <b><a href="https://paladinic.github.io/keydeck/">▶ Try it now</a></b> - or
   <b><a href="https://raw.githubusercontent.com/paladinic/keydeck/main/index.html">download <code>index.html</code></a></b>
   (right-click → Save as) and double-click it. That's the whole install.
 </p>
@@ -30,7 +30,7 @@ notes in a piano roll, and export a standard `.mid` or a rendered `.wav`.
 
 ## Portability is the feature
 
-keydeck is one file. Not "one file plus a bundler that produces one file" — the
+keydeck is one file. Not "one file plus a bundler that produces one file" - the
 file in this repository is the file that runs. Open it in an editor and you can
 read every byte that executes.
 
@@ -50,8 +50,8 @@ it on a Raspberry Pi with no internet. It works the same everywhere.
 
 > **One caveat:** connecting a **hardware** MIDI keyboard needs the Web MIDI
 > API, and browsers only expose that on a secure page. Opened straight from
-> disk (`file://`) everything else works — the QWERTY keyboard, the piano roll,
-> playback, and both exports — but hardware input stays greyed out. Use the
+> disk (`file://`) everything else works - the QWERTY keyboard, the piano roll,
+> playback, and both exports - but hardware input stays greyed out. Use the
 > [hosted version](https://paladinic.github.io/keydeck/), or serve the folder
 > locally: `python -m http.server` then open `http://localhost:8000`.
 
@@ -60,7 +60,7 @@ it on a Raspberry Pi with no internet. It works the same everywhere.
 ## What it does
 
 **Input**
-- Play notes on the QWERTY keyboard — two full octaves laid out like a piano
+- Play notes on the QWERTY keyboard - two full octaves laid out like a piano
 - Draw, drag, and resize notes directly in the piano roll
 - Record from a hardware MIDI keyboard, sustain pedal included
 - Import an existing `.mid` file
@@ -75,7 +75,7 @@ it on a Raspberry Pi with no internet. It works the same everywhere.
 **Sound**
 - A built-in synthesiser with two engines: additive/subtractive **oscillators**
   and **FM**
-- Ten instruments out of the box — piano, electric piano, marimba, organ,
+- Ten instruments out of the box - piano, electric piano, marimba, organ,
   plucked guitar, sub bass, strings, warm pad, synth lead, and a drum kit
 - A full instrument editor with live waveform and envelope scopes: oscillator
   stacks, ADSR, resonant low-pass filter with key tracking and envelope sweep,
@@ -130,7 +130,7 @@ In the piano roll: **drag** to move a note, **shift+drag** to select an area,
 4. Press `Space` to hear it back. Fix anything by dragging notes in the roll.
 5. **File → Export MIDI** or **Export WAV**.
 
-Your work is never saved automatically — keydeck writes nothing to your disk
+Your work is never saved automatically - keydeck writes nothing to your disk
 unless you ask. Use **File → Save project** to keep a `.json` you can reopen later.
 
 ---
