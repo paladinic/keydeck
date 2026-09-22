@@ -1,0 +1,47 @@
+# Publishes index.html to GitHub Pages.
+#
+# The point of hosting a file that already runs from disk: Web MIDI needs a
+# secure context, so hardware keyboards only work over https or localhost.
+# The Pages copy gives people a working demo; the download still runs offline.
+#
+# One-time setup: repo Settings > Pages > Source: "GitHub Actions".
+
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it mid-flight.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # There is no build step, and there must never be one. The repo root is
+      # the artifact: index.html plus the docs that sit next to it.
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

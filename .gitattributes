@@ -1,0 +1,16 @@
+# Normalize to LF in the repository. keydeck is meant to be downloaded and
+# opened on any machine, so the stored bytes should not depend on the OS of
+# whoever committed last. Shell steps in the CI workflows also need LF.
+* text=auto eol=lf
+
+# Binary-ish things people might attach or commit under docs/
+*.mid   binary
+*.midi  binary
+*.wav   binary
+*.png   binary
+*.gif   binary
+*.jpg   binary
+
+# Keep the one file that matters out of GitHub's language stats skew and
+# make sure diffs of it are treated as text.
+index.html text eol=lf linguist-detectable=true

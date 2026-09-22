@@ -1,0 +1,23 @@
+# keydeck is a single file with no build step. Almost nothing belongs here.
+# This list exists to keep stray artifacts out of a repo whose whole point
+# is that you can read every shipped byte.
+
+# Exported / saved output from running the app
+keydeck.mid
+keydeck.wav
+keydeck-project.json
+*.mid
+*.midi
+*.wav
+!docs/**/*.mid
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,78 @@
+# Guards the one rule in CONTRIBUTING.md: index.html stays self-contained.
+# This is not a test suite. It only checks that nothing external crept in.
+
+name: Self-contained check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Only index.html ships
+        run: |
+          if [ ! -f index.html ]; then
+            echo "::error::index.html is missing"
+            exit 1
+          fi
+          echo "index.html is $(wc -c < index.html) bytes"
+
+      - name: No external resources
+        run: |
+          fail=0
+
+          # Remote script/style/img/iframe sources. The inline SVG favicon is a
+          # data: URI and is expected, so data: is excluded from the match.
+          if grep -nEi '(src|href)[[:space:]]*=[[:space:]]*"(https?:)?//' index.html; then
+            echo "::error::index.html references a remote URL in src/href"
+            fail=1
+          fi
+
+          # Network calls at runtime.
+          if grep -nE '\b(fetch|XMLHttpRequest|importScripts|EventSource|WebSocket)\b' index.html; then
+            echo "::error::index.html makes a network call"
+            fail=1
+          fi
+
+          # Anything written to the user's machine without them asking.
+          if grep -nE '\b(localStorage|sessionStorage|indexedDB|document\.cookie)\b' index.html; then
+            echo "::error::index.html writes to browser storage"
+            fail=1
+          fi
+
+          # ES module syntax implies a second file.
+          if grep -nE '<script[^>]+type[[:space:]]*=[[:space:]]*"module"' index.html; then
+            echo "::error::index.html uses a module script"
+            fail=1
+          fi
+
+          exit $fail
+
+      - name: No build tooling
+        run: |
+          for f in package.json package-lock.json yarn.lock pnpm-lock.yaml \
+                   webpack.config.js vite.config.js rollup.config.js tsconfig.json; do
+            if [ -e "$f" ]; then
+              echo "::error::$f found - keydeck has no build step"
+              exit 1
+            fi
+          done
+          echo "No build tooling present."
+
+      - name: Parses as HTML and JavaScript
+        run: |
+          # Extract the inline script and syntax-check it with Node.
+          node -e '
+            const fs = require("fs");
+            const html = fs.readFileSync("index.html", "utf8");
+            const m = html.match(/<script>([\s\S]*)<\/script>/);
+            if (!m) { console.error("::error::no inline <script> found"); process.exit(1); }
+            new (require("vm").Script)(m[1], { filename: "index.html" });
+            console.log("Inline script parses cleanly (" + m[1].split("\n").length + " lines).");
+          '

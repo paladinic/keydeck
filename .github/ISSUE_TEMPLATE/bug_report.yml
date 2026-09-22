@@ -1,0 +1,71 @@
+name: Bug report
+description: Something in keydeck doesn't work the way it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. keydeck has no telemetry and no logs, so the
+        details below are genuinely all there is to go on.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: |
+        1. Added a track with the Marimba instrument
+        2. Recorded four bars
+        3. Pressed Export WAV
+        Expected: a wav of what I played. Got: silence after bar 2.
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Firefox 128 on Windows 11
+    validations:
+      required: true
+
+  - type: dropdown
+    id: opened
+    attributes:
+      label: How did you open keydeck?
+      options:
+        - Double-clicked the file (file://)
+        - The hosted version (paladinic.github.io/keydeck)
+        - A local server (http://localhost)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: keydeck version
+      description: Shown in Help > About, and in the browser tab title.
+      placeholder: "0.9.5"
+
+  - type: input
+    id: hardware
+    attributes:
+      label: MIDI hardware
+      description: Only if the bug involves an external keyboard or MIDI out.
+      placeholder: Arturia KeyStep, over USB
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: Press F12, open the Console tab, reproduce the bug, and paste anything red.
+      render: text
+
+  - type: textarea
+    id: project
+    attributes:
+      label: Project file
+      description: >
+        If it only happens with a particular project, use File > Save project and
+        attach the .json. It's plain text, so you can paste it here or drag the
+        file in.
